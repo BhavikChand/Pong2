@@ -8,6 +8,9 @@ public class Paddle : MonoBehaviour
     public float speed;
     public float collisionBallSpeedUp = 1.5f;
     public string inputAxis;
+    
+    public AudioClip leftPaddleSound;
+    public AudioClip rightPaddleSound;
 
     //-----------------------------------------------------------------------------
     void Update()
@@ -44,5 +47,24 @@ public class Paddle : MonoBehaviour
 
         // Debug.DrawRay(other.transform.position, newVelocity, Color.yellow);
         // Debug.Break();
+        
+        //Left Paddle Collision:
+        Debug.Log($"{this.name} collided with {other.gameObject.name}");
+        
+        AudioSource audioSrc = GetComponent<AudioSource>();
+        
+        if (this.name == "Left Paddle")
+        {
+            // Debug.Log("Left Paddle");
+            audioSrc.clip = leftPaddleSound;
+            audioSrc.Play();
+        }
+
+        if (this.name == "Right Paddle")
+        {
+            // Debug.Log("Right Paddle");
+            audioSrc.clip = rightPaddleSound;
+            audioSrc.Play();
+        }
     }
 }
