@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,10 +7,17 @@ public class GameManager : MonoBehaviour
     public float startSpeed = 3f;
     public GoalTrigger leftGoalTrigger;
     public GoalTrigger rightGoalTrigger;
+    
+    //Modifiers
+    public SpeedUpTrigger speedUpTrigger;
+    public SpeedDownTrigger speedDownTrigger;
 
+    //Count for left and right:
     int leftPlayerScore;
     int rightPlayerScore;
     Vector3 ballStartPos;
+    public TextMeshProUGUI scoreText;
+
 
     const int scoreToWin = 11;
 
@@ -22,6 +30,13 @@ public class GameManager : MonoBehaviour
     }
 
     //---------------------------------------------------------------------------
+    void SetCountText(int leftScore, int rightScore)
+    {
+        scoreText.text = "Score: " + leftScore.ToString() + "/" + rightScore.ToString();
+        scoreText.color = new Color(Random.value, Random.value, Random.value);
+    }
+    
+    //---------------------------------------------------------------------------
     public void OnGoalTrigger(GoalTrigger trigger)
     {
         // If the ball entered a goal area, increment the score, check for win, and reset the ball
@@ -30,7 +45,6 @@ public class GameManager : MonoBehaviour
         {
             rightPlayerScore++;
             Debug.Log($"Right player scored: {rightPlayerScore}");
-
             if (rightPlayerScore == scoreToWin)
                 Debug.Log("Right player wins!");
             else
@@ -46,6 +60,13 @@ public class GameManager : MonoBehaviour
             else
                 ResetBall(1f);
         }
+        
+        SetCountText(leftPlayerScore, rightPlayerScore);
+    }
+    //---------------------------------------------------------------------------
+    public void OnSpeedTrigger(SpeedUpTrigger trigger)
+    {
+        
     }
 
     //---------------------------------------------------------------------------
