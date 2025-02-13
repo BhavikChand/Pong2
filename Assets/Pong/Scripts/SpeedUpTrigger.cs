@@ -7,6 +7,9 @@ public class SpeedUpTrigger : MonoBehaviour
     //---------------------------------------------------------------------------
     void OnTriggerEnter(Collider other)
     {
-        gameManager.SpeedUpTrigger(this);
+        if (other.CompareTag("Ball")) // Ensure it only affects the ball
+        {
+            gameManager.SpeedUpTrigger();
+        }
     }
 }

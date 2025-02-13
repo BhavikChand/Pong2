@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 146388166}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 284222592}
   - component: {fileID: 284222591}
   - component: {fileID: 284222590}
+  - component: {fileID: 284222594}
   m_Layer: 0
   m_Name: SpeedDown
   m_TagString: Untagged
@@ -434,7 +435,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -460,7 +461,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6c9d925d19b69544a8ca84492226d7ad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -505,6 +506,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &284222594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284222589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99adba86d585f974ca7715a85eddfea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1677812269}
 --- !u!1 &549366791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1308,7 @@ GameObject:
   - component: {fileID: 1186252941}
   - component: {fileID: 1186252940}
   - component: {fileID: 1186252939}
+  - component: {fileID: 1186252943}
   m_Layer: 0
   m_Name: SpeedUp
   m_TagString: Untagged
@@ -1316,7 +1331,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1342,7 +1357,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62ccc2fdb79740a4aa7ef52152c5ed81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1387,6 +1402,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1186252943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186252938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 030d32efbee9a4e4ea1280dbf78eb35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1677812269}
 --- !u!1 &1456407587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1667,8 @@ MonoBehaviour:
   startSpeed: -3
   leftGoalTrigger: {fileID: 653043940}
   rightGoalTrigger: {fileID: 642472329}
+  speedUpTrigger: {fileID: 0}
+  speedDownTrigger: {fileID: 0}
   scoreText: {fileID: 617653235}
 --- !u!1 &1764608158
 GameObject:

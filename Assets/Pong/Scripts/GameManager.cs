@@ -64,10 +64,20 @@ public class GameManager : MonoBehaviour
         SetCountText(leftPlayerScore, rightPlayerScore);
     }
     //---------------------------------------------------------------------------
-    public void OnSpeedTrigger(SpeedUpTrigger trigger)
+    public void SpeedUpTrigger()
     {
-        
+        var rbody = ball.GetComponent<Rigidbody>();
+        rbody.velocity *= 1.20f;
+        Debug.Log("Ball speed increased!");
     }
+
+    public void SpeedDownTrigger(SpeedDownTrigger trigger)
+    {
+        var rbody = ball.GetComponent<Rigidbody>();
+        rbody.velocity *= 0.80f;
+        Debug.Log("Ball speed decreased!");
+    }
+
 
     //---------------------------------------------------------------------------
     void ResetBall(float directionSign)
